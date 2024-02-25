@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - freecodecamp
+networks:
+  freecodecamp:
+    driver: bridge
